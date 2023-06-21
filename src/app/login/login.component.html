@@ -1,3 +1,26 @@
-<label for="name">Name</label>
-<input pInputText type="text" placeholder="Name">
-<button pButton label="Login"></button>
+<div class="main-area">
+    <div class="form-wrapper">
+       <div class="header">
+           <p>Login</p>
+       </div>
+        <form [formGroup]="loginForm" class="form-container" novalidate>
+            <div class="input-group">
+                <label for="name">Email</label>
+                <input pInputText id="name" type="text" formControlName="email" placeholder="Email">
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input pInputText id="password" type="password" formControlName="password" placeholder="Password">
+            </div>
+        </form>
+        <div class="forgot-password">
+            <span class="link-text" (click)="forgotPassword()">Forgot Password ?</span>
+        </div>
+        <div class="action-cta">
+            <button pButton label="Login" class="primary-btn" (click)="login()"></button>
+        </div>
+        <div class="new-account">
+            <p class="new-account-text">Create New Account <span class="link-text">Click Here</span></p>
+        </div>
+   </div> 
+</div>
