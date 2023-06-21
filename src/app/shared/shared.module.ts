@@ -5,6 +5,7 @@ import { SharedRoutingModule } from './shared-routing.module';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ToastModule } from 'primeng/toast';
 
 
 @NgModule({
@@ -15,13 +16,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
     ButtonModule,
-    InputTextModule
+    InputTextModule,
+    ToastModule
   ],
   exports : [
     FormsModule,
     ReactiveFormsModule,
     ButtonModule,
     InputTextModule,
+    ToastModule
   ]
 })
 export class SharedModule { }
