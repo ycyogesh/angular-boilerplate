@@ -8,6 +8,16 @@ import { LoginComponent } from './login/login.component'
 import { SharedModule } from './shared/shared.module';
 import { MessageService } from 'primeng/api';
 import { HttpClientModule } from '@angular/common/http';
+import { NgxUiLoaderConfig, NgxUiLoaderHttpModule, NgxUiLoaderModule, POSITION, SPINNER } from 'ngx-ui-loader';
+const ngxUiLoaderConfig: NgxUiLoaderConfig = {
+  fgsColor: '#071765',
+  fgsPosition: POSITION.centerCenter,
+  fgsSize: 50,
+  blur: 0,
+  fgsType: SPINNER.threeStrings,
+  hasProgressBar:false,
+  overlayColor: "rgba(40,40,40,0.21)",
+};
 
 @NgModule({
   declarations: [
@@ -19,7 +29,11 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
+    NgxUiLoaderHttpModule.forRoot({
+      showForeground:true
+    })
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

@@ -1,7 +1,7 @@
 export interface ILoginData {
     message: string;
     data: ILoginResult;
-    sucess: boolean;
+    success: boolean;
 }
 
 export interface ILoginResult{

@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HelperService } from '../shared/helper.service';
 import { AppService } from '../app.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -40,9 +41,9 @@ export class LoginComponent {
         // this.router.navigate(['dashboard']);
         this.helper.showToast('success', res.message);
       },
-      error : (err) => {
+      error : (err : HttpErrorResponse) => {
         console.error(err);
-        this.helper.showToast('error', 'Login Failed', err.error.message);
+        this.helper.showToast('error',err.error.message);
       }
     });
     
