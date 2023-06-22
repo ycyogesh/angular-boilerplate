@@ -9,6 +9,7 @@ import { SharedModule } from './shared/shared.module';
 import { MessageService } from 'primeng/api';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxUiLoaderConfig, NgxUiLoaderHttpModule, NgxUiLoaderModule, POSITION, SPINNER } from 'ngx-ui-loader';
+import { HomeComponent } from './home/home.component';
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   fgsColor: '#071765',
   fgsPosition: POSITION.centerCenter,
@@ -22,7 +23,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

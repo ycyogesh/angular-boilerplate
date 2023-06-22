@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { HelperService } from '../shared/helper.service';
 import { AppService } from '../app.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import { ILoginData } from '../utils/interface-classes';
 
 @Component({
   selector: 'app-login',
@@ -35,11 +36,14 @@ export class LoginComponent {
       return;
     }
     this.appService.login(this.loginForm.value).subscribe({
-      next : (res) => {
+      next : (res : any) => {
         console.log(res);
-        this.loginForm.reset();
-        // this.router.navigate(['dashboard']);
-        this.helper.showToast('success', res.message);
+        if(res) {
+          localStorage.setItem('token', res.data.token);
+          this.router.navigate(['home']);
+          this.loginForm.reset();
+          this.helper.showToast('success', res.message);
+        }
       },
       error : (err : HttpErrorResponse) => {
         console.error(err);
