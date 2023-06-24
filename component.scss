@@ -1,27 +1,40 @@
 // Button
 .primary-btn {
-    color: #ffffff;
-    background: $primary-color !important;
-    border: 1px solid $primary-color !important;
-    padding: 5px 10px !important;
+    color: $c-background !important;
+    background: $c-accent !important;
+    border: none !important;
+    border-radius: $radius !important;
+    padding: $textFrameY $textFrameX;
+    font-weight: 500;
+    border: none;
     width: 100%;
     font-size: 1rem;
     transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
-    border-radius: 3px !important;
+    &:hover {
+        background: $c-accent !important;
+        border-color: $c-accentContrasted !important;
+        color: $c-accentContrasted !important;
+        filter: brightness(1.1);
+        // box-shadow: 0 0 0 1px $c-accentContrasted inset !important;
+    }
 }
 
 // Input
 .cust-input-text {
-    height:$input-height ;
-    padding: 5px 10px !important;
-    border-radius: 3px !important;
-    background: $input-background;
-    border :1px solid $border-color ;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 16px;
-    color: $input-text-color;
+
+
+    padding: calc($textFrameY - $fieldBorderWidth) $textFrameY;
+
+    
+    color: inherit;
+    border:  $fieldBorderWidth solid $c-fieldBorder;
+    border-radius: $radius;
     width: 100%;
+    background-color: transparent;
+    font-size: $text-s !important;
+    margin-top: $space-s !important;
+
+    // height:$input-height;
     &:focus {
         border-color: $border-focus-color ;
         box-shadow: none !important;
@@ -41,7 +54,6 @@
     }
     &::placeholder{
     color: $placeholder-color;
-    font-size: 14px ;
     }
     &.p-component:disabled {
         border-color: $border-color !important;

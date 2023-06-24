@@ -40,6 +40,7 @@ export class LoginComponent {
         console.log(res);
         if(res) {
           localStorage.setItem('token', res.data.token);
+          localStorage.setItem('sessionid', res.data.sessionid);
           this.router.navigate(['home']);
           this.loginForm.reset();
           this.helper.showToast('success', res.message);

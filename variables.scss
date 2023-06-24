@@ -30,3 +30,76 @@ $toast-text-color:#1D2D3E;
 $input-height:32px;
 $secondary-label-color:#44546F;
 $login-form-background-color:#CECECE;
+
+
+// 
+
+$baseTextSize: 0.9rem;
+$textSizeIncrement: 1.1;
+$text-xs: calc(($baseTextSize) / ($textSizeIncrement));
+$text-s: ($baseTextSize);
+$text-m: calc(($text-s) * ($textSizeIncrement));
+$text-l: calc(($text-m) * ($textSizeIncrement));
+$text-xl: calc(($text-l) * ($textSizeIncrement));
+$lineHeightFixedAmount: 0.35rem;
+$lineHeightRelativeAmount: 1.1em;
+$globalLineHeight: calc(($lineHeightFixedAmount) + ($lineHeightRelativeAmount));
+$fontFamily: system-ui, sans-serif;
+
+//Spacing
+$unit: 0.5rem;
+$spaceIncrement: 1.65;
+$space-s: ($unit);
+$space-m: calc(($space-s) * ($spaceIncrement));
+$space-l: calc(($space-m) * ($spaceIncrement));
+$space-xl: calc(($space-l) * ($spaceIncrement));
+$space-2xl: calc(($space-xl) * ($spaceIncrement));
+$space-3xl: calc(($space-2xl) * ($spaceIncrement));
+$space-4xl: calc(($space-3xl) * ($spaceIncrement));
+
+$textFrameRatio: 2.37;
+$textFrameY: 0.8em;
+$textFrameX: calc(($textFrameY) * ($textFrameRatio));
+
+// Layer
+$radius: 0.4rem;
+$fieldBorderWidth: 2px;
+
+
+// Colors
+$accentH: 0;
+$accentS: 31%;
+$accentL: 50%;
+$c-accent: hsl(($accentH), ($accentS), ($accentL));
+$c-accentContrasted: hsl(($accentH), ($accentS), 95%);
+
+$greyH: $accentH;
+$greyS: 5%;
+$initialGreyLightness: 93%;
+$greyscaleLightnessIncrement: 11.3%;
+
+$grey1L:  ($initialGreyLightness);
+$grey2L:  calc(($initialGreyLightness) - ($greyscaleLightnessIncrement) * 1);
+$grey3L:  calc(($initialGreyLightness) - ($greyscaleLightnessIncrement) * 2);
+$grey4L:  calc(($initialGreyLightness) - ($greyscaleLightnessIncrement) * 3);
+$grey5L:  calc(($initialGreyLightness) - ($greyscaleLightnessIncrement) * 4);
+$grey6L:  calc(($initialGreyLightness) - ($greyscaleLightnessIncrement) * 5);
+$grey7L:  calc(($initialGreyLightness) - ($greyscaleLightnessIncrement) * 6);
+$grey8L:  calc(($initialGreyLightness) - ($greyscaleLightnessIncrement) * 7);
+
+$c-grey1: hsl(($greyH), ($greyS), ($grey1L));
+$c-grey2: hsl(($greyH), ($greyS), ($grey2L));
+$c-grey3: hsl(($greyH), ($greyS), ($grey3L));
+$c-grey4: hsl(($greyH), ($greyS), ($grey4L));
+$c-grey5: hsl(($greyH), ($greyS), ($grey5L));
+$c-grey6: hsl(($greyH), ($greyS), ($grey6L));
+$c-grey7: hsl(($greyH), ($greyS), ($grey7L));
+$c-grey8: hsl(($greyH), ($greyS), ($grey8L));
+
+$c-border: hsla(($greyH), ($greyS), ($grey8L), 0.1);
+$c-overlay: hsla(($greyH), ($greyS), ($grey8L), 0.07);
+$c-background: white;
+$c-body: ($c-grey8);
+$c-bodyDimmed: hsla(($greyH), ($greyS), ($grey8L), 0.5);
+$c-fieldBorder: ($c-grey2);
+$c-buttonBg: ($c-grey2);

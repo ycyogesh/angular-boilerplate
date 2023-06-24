@@ -7,9 +7,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component'
 import { SharedModule } from './shared/shared.module';
 import { MessageService } from 'primeng/api';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NgxUiLoaderConfig, NgxUiLoaderHttpModule, NgxUiLoaderModule, POSITION, SPINNER } from 'ngx-ui-loader';
 import { HomeComponent } from './home/home.component';
+import { HttpInterceptors } from './auth/http.interceptor';
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   fgsColor: '#071765',
   fgsPosition: POSITION.centerCenter,
@@ -37,7 +38,14 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
       showForeground:true
     })
   ],
-  providers: [MessageService],
+  providers: [
+    MessageService,
+    {
+      provide : HTTP_INTERCEPTORS,
+      useClass : HttpInterceptors,
+      multi : true
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

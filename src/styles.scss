@@ -6,11 +6,12 @@
 
 
 * {
-    font-family: 'Poppins', sans-serif;
+    font-family:  'system-ui', sans-serif;
 }
 
 body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    line-height: $globalLineHeight !important;
 }
