@@ -1,0 +1,14 @@
+<div class="error" *ngIf="data?.invalid && (data?.dirty || data?.touched)">
+    <div class="error-container" *ngIf="data.errors?.required">
+        <span class="message"> {{dataName}} is required.</span>
+    </div>
+    <div class="error-container" *ngIf="data.errors?.pattern">
+        <span class="message">{{dataName}} does not match the required pattern.</span>
+    </div>
+    <div class="error-container" *ngIf="data.errors?.minlength && !data.errors?.pattern">
+        <span class="message"> {{dataName}} must be at least {{minLength}} characters long.</span>
+    </div>
+    <div class="error-container" *ngIf="data.errors?.maxlength && !data.errors?.pattern">
+        <span class="message">{{dataName}} cannot be more than {{maxLength}} characters long.</span>
+    </div>
+</div>

@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators , FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HelperService } from '../shared/helper.service';
 import { AppService } from '../app.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { ILoginData } from '../utils/interface-classes';
+import { DialogService } from 'primeng/dynamicdialog';
+import { AlertDialogComponent } from '../alert-dialog/alert-dialog.component';
 
 @Component({
   selector: 'app-login',
@@ -14,8 +16,13 @@ import { ILoginData } from '../utils/interface-classes';
 export class LoginComponent {
 
   loginForm! : FormGroup;
+  formVisible:boolean =false;
 
-  constructor(private fb : FormBuilder, private router : Router, private helper : HelperService, private appService : AppService) { }
+  constructor(private dialogService: DialogService,private fb : FormBuilder, private router : Router, private helper : HelperService, private appService : AppService) { }
+
+  get form(){
+    return this.loginForm.controls
+  }
 
   ngOnInit(): void {
     this.initializeForm();
@@ -57,5 +64,39 @@ export class LoginComponent {
   forgotPassword() {
     console.log("Clicked on forgot password");
     // this.router.navigate(['forgot-password']);
+  }
+
+  cancelForm(){
+    if (this.loginForm.touched) {
+      this.cancelConfirmation();
+      return ;
+    }
+    this.formVisible=false ;
+    this.loginForm.reset();
+    
+  }
+  openDialog(){
+
+  }
+
+  cancelConfirmation() {
+    this.dialogService.open(AlertDialogComponent, {
+      data: {
+        message: 'Are you sure want to cancel ?',
+        primaryBtnText: 'Yes',
+        secondaryBtnText: 'No'
+      },
+      header: 'Cancel',
+      width: '30%',
+      styleClass: 'cust-alert-dialog',
+      dismissableMask: true,
+      closeOnEscape: false,
+      closable: true
+    }).onClose.subscribe((res: any) => {
+      if (res) {
+        this.formVisible = false;
+        this.loginForm.reset();
+      }
+    })
   }
 }

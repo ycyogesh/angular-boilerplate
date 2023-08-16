@@ -1,0 +1,10 @@
+@import '../../../variables.scss';
+
+.error {
+    position: absolute;
+    .error-container {
+        color: $required-color;
+        width: 100%;
+        font-size: 11px;
+    }
+}

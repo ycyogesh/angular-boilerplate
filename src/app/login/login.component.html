@@ -1,16 +1,21 @@
 <div class="main-area">
     <div class="form-wrapper">
-       <div class="header">
-           <p>Login</p>
-       </div>
+        <div class="header">
+            <p>Login</p>
+        </div>
         <form [formGroup]="loginForm" class="form-container" novalidate>
-            <div class="input-group">
+            <div class="input-group" class="required">
                 <label for="name">Email</label>
-                <input pInputText id="name" type="text" class="cust-input-text" formControlName="email" placeholder="Email">
+                <input pInputText id="name" type="text" class="cust-input-text" formControlName="email"
+                    placeholder="Email">
+                <app-error-message [data]="form['email']" [dataName]="'Email'"></app-error-message>
+                <!-- <app-error-message [data]="formcontrols['controlName']" [dataName]="'errorDisplayName'"></app-error-message> -->
             </div>
             <div class="input-group">
                 <label for="password">Password</label>
-                <input pInputText id="password" type="password" class="cust-input-text" formControlName="password" placeholder="Password">
+                <input pInputText id="password" type="password" class="cust-input-text" formControlName="password"
+                    placeholder="Password">
+                <app-error-message [data]="form['password']" [dataName]="'Password'"></app-error-message>
             </div>
         </form>
         <div class="forgot-password">
@@ -22,5 +27,14 @@
         <div class="new-account">
             <p class="new-account-text">Create New Account <span class="link-text">Click Here</span></p>
         </div>
-   </div> 
+    </div>
+    <div class="action-cta-but">
+        <button pButton label="Add " class="primary-btn"></button>
+    </div>
+    <ng-template pTemplate="footer">
+        <div class="footer">
+            <button pButton class="cust-secondary-btn" label="Cancel" (click)="cancelForm()"></button>
+            <button pButton class="cust-primary-btn" (click)="openDialog()" label="open"></button>
+        </div>
+    </ng-template>
 </div>
