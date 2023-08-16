@@ -1,0 +1,18 @@
+<div class="cust-alert-dialog">
+    <div class="">
+        <div class="header">
+            <p>{{dialogData['header']}}</p>
+        </div>
+        <div class="content">
+            <p>{{dialogData['message']}}</p>
+        </div>
+        <div class="footer">
+            <div class="action-btn">
+                <button pButton class="cust-secondary-btn" [label]="dialogData['secondaryBtnText']" (click)="cancel()"></button>
+            </div>
+            <div class="action-btn">
+                <button pButton class="cust-primary-btn" [label]="dialogData['primaryBtnText']" (click)="submit()"></button>
+            </div>
+        </div>
+    </div>
+</div>
