@@ -11,6 +11,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NgxUiLoaderConfig, NgxUiLoaderHttpModule, NgxUiLoaderModule, POSITION, SPINNER } from 'ngx-ui-loader';
 import { HomeComponent } from './home/home.component';
 import { HttpInterceptors } from './auth/http.interceptor';
+import { SimpleFormsComponent } from './simple-forms/simple-forms.component';
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   fgsColor: '#071765',
   fgsPosition: POSITION.centerCenter,
@@ -25,7 +26,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    SimpleFormsComponent
   ],
   imports: [
     BrowserModule,

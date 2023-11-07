@@ -1,0 +1,73 @@
+<div class="main-container">
+    <div class="title-block">
+        <p class="title-text">User Registration</p>
+    </div>
+    <div class="form-block">
+        <ng-container [formGroup]="userForm">
+            <div class="left-side">
+                <div class="field-block">
+                    <div class="label-block">
+                        <label for="name">Name</label>
+                    </div>
+                    <div class="input-field-block">
+                        <div class="input-block">
+                            <input autocomplete="off" type="text" id="name"  class="k-input-text" pInputText   placeholder="Name" formControlName="name"/>
+                        </div>
+                        <ng-container *ngIf="form['name'].invalid && (form['name'].dirty || form['name'].touched)">
+                            <div class="error-block">
+                                {{form['name'].errors | json}}
+                            </div>
+                        </ng-container>
+                    </div>
+                    <div>
+                        {{formValues?.name}}
+                    </div>
+                </div>
+                <div class="field-block">
+                    <div class="label-block">
+                        <label for="name">Email</label>
+                    </div>
+                    <div class="input-field-block">
+                        <div class="input-block">
+                            <input autocomplete="off" type="text" id="name"  class="k-input-text" pInputText   placeholder="Email" formControlName="email"/>
+                        </div>
+                        <ng-container *ngIf="form['email'].invalid && (form['email'].dirty || form['email'].touched)">
+                            <div class="error-block">
+                                {{form['email'].errors | json}}
+                            </div>
+                        </ng-container>
+                    </div>
+                    <div>
+                        {{formValues?.email}}
+                    </div>
+                </div>
+                <div class="field-block">
+                    <div class="label-block">
+                        <label for="name">Mobile</label>
+                    </div>
+                    <div class="input-field-block">
+                        <div class="input-block">
+                            <input autocomplete="off" type="text" id="name"  class="k-input-text" pInputText   placeholder="Mobile Number" formControlName="mobileNumber"/>
+                        </div>
+                        <ng-container *ngIf="form['mobileNumber'].invalid && (form['mobileNumber'].dirty || form['mobileNumber'].touched)">
+                            <div class="error-block">
+                                {{form['mobileNumber'].errors | json}}
+                            </div>
+                        </ng-container>
+                    </div>
+                    <div>
+                        {{formValues?.mobileNumber}}
+                    </div>
+                </div>
+                <div class="action-block">
+                    <p-button (click)="submit()" class="k-button-save" label="Submit"></p-button>
+                </div>
+            </div>
+            <div class="right-side">
+                
+            </div>
+
+        </ng-container>
+
+    </div>
+</div>

@@ -3,6 +3,7 @@ import { Router, RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { SharedModule } from './shared/shared.module';
 import { HomeComponent } from './home/home.component';
+import { SimpleFormsComponent } from './simple-forms/simple-forms.component';
 
 const isAuthenticated = () => {
   const router = inject(Router)
@@ -34,6 +35,10 @@ const routes: Routes = [
     path:'home',
     component : HomeComponent,
     canActivate : [isAuthenticated]
+  },
+  {
+    path: 'forms',
+    component: SimpleFormsComponent
   }
 ];
 
