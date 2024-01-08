@@ -4,10 +4,13 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "npm version patch && ng build && git add package.json && git commit -m 'chore: version bump' && git tag v$(node -p -e \"require('./package.json').version\") && git push origin master --tags",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "prebuild": "node update-version.js"
+    "prebuild": "node update-version.js",
+    "release:patch": "npm version patch && git push origin master --tags",
+    "release:minor": "npm version minor && git push origin master --tags",
+    "release:major": "npm version major && git push origin master --tags"
   },
   "private": true,
   "dependencies": {

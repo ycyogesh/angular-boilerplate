@@ -43,5 +43,4 @@ Thumbs.db
 
 
 
-version.ts
-version.prod.ts
+/src/environments/version.*
